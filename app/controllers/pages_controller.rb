@@ -3,8 +3,8 @@ class PagesController < ApplicationController
    @title = "Add Contact"
   end
 
-  def messages
-    @title = "Messenger"
+  def message
+    @title = "Message"
   end
 
   def profile

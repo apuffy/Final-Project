@@ -2,7 +2,7 @@ FinalProject::Application.routes.draw do
 
   root :to => "pages#profile"
   match 'addcontact' , :to => 'pages#addcontact'
-  match 'messages', :to => 'pages#messages'
+  match 'message', :to => 'pages#message'
   match 'search', :to => "pages#search"
   # The priority is based upon order of creation:
   # first created -> highest priority.
