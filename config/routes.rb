@@ -1,4 +1,12 @@
 FinalProject::Application.routes.draw do
+  get "pages/addcontact"
+
+  get "pages/profile"
+
+  get "pages/search"
+
+  get "pages/message"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
