@@ -1,5 +1,7 @@
 FinalProject::Application.routes.draw do
 
+  get "users/new"
+
   root :to => "pages#profile"
   match 'addcontact' , :to => 'pages#addcontact'
   match 'message', :to => 'pages#message'
