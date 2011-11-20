@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinalProject</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <title><%= @title %></title>
+  	<%= stylesheet_link_tag    "Layout" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div id = "container">
+		<div>
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
