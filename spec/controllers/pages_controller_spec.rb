@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe PagesController do
+  render_views
 
   describe "GET 'addcontact'" do
     it "returns http success" do
