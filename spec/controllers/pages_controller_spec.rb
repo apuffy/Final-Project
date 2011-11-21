@@ -9,7 +9,7 @@ describe PagesController do
     end
     
     it "should have the right title" do
-      get :new
+      get 'addcontact'
       response.should have_selector("title", :content => "Add Contact")
     end
   end
@@ -21,7 +21,7 @@ describe PagesController do
     end
 
     it "should have the right title" do
-      get :new
+      get 'profile'
       response.should have_selector("title", :content => "My Profile")
     end
   end
@@ -33,7 +33,7 @@ describe PagesController do
     end
     
     it "should have the right title" do
-      get :new
+      get 'search'
       response.should have_selector("title", :content => "Search")
     end
   end
@@ -45,7 +45,7 @@ describe PagesController do
     end
     
     it "should have the right title" do
-      get :new
+      get 'message'
       response.should have_selector("title", :content => "Messages")
     end
   end
