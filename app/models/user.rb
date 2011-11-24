@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   validates :password, :presence     => true,
                        :confirmation => true,
                        :length       => { :within => 6..40 }
+                       
+  def has_password?(submitted_password)
+    
+  end
 end
