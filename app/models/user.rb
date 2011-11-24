@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                        :length       => { :within => 6..40 }
                        
   def has_password?(submitted_password)
-    user:password == (submitted_password)
+    self.password == (submitted_password)
   end
   
   def self.authenticate(email, submitted_password)
