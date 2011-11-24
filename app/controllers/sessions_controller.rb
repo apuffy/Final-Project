@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
   
   def create
+    flash.now[:notice] = "Got here!!!"
     user = User.authenticate(params[:session][:email],
                              params[:session][:password])
     if user.nil?
