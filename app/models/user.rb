@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password
+  attr_accessible :name, :email, :phone, :address, :city, :state, :password
 
   validates :password, :presence     => true,
                        :confirmation => true,
@@ -9,10 +9,12 @@ class User < ActiveRecord::Base
   def has_password?(submitted_password)
     @password == (submitted_password)
   end
-  
-  def self.authenticate(email, submitted_password)
-    user = find_by_email(email)
-    return nil  if user.nil?
-    return user if user.has_password?(submitted_password)
-  end
+    def self.authenticate(email, password)
+      if user = User.where(:email => email)
+        if password == (password)
+          return user
+        end
+      end
+      return nil
+   end
 end
