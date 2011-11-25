@@ -3,16 +3,16 @@ require 'spec_helper'
 describe SessionsController do
   render_views
 
-  describe "GET 'login'" do
+  describe "GET 'new'" do
 
     it "should be successful" do
-      get :login
+      get :new
       response.should be_success
     end
 
     it "should have the right title" do
-      get :login
-      response.should have_selector("title", :content => "Sign In")
+      get :new
+      response.should have_selector("title", :content => "Sign in")
     end
   end
   
@@ -32,7 +32,7 @@ describe SessionsController do
 
       it "should have the right title" do
         post :create, :session => @attr
-        response.should have_selector("title", :content => "Sign in")
+        response.should have_selector("title", :content => "Sign In")
       end
 
       it "should have a flash.now message" do
