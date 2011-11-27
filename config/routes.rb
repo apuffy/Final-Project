@@ -1,4 +1,4 @@
-FinalProject::Application.routes.draw do
+4FinalProject::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destory]

@@ -4,17 +4,17 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.authenticate(params[:session][:email],
-                             params[:session][:password])
-    if user.nil?
-      flash.now[:errors] = "Invalid email/password combination."
-      @title = "Sign In"
-      render 'new'
-    else
-
-      sign_in user
+    #user = User.authenticate(params[:session][:email],
+    #                         params[:session][:password])
+    #if user.nil?
+    #  flash.now[:errors] = "Invalid email/password combination."
+    #  @title = "Sign In"
+    #  render 'new'
+    #else
+      user = User.where(:email => params[:session][:email])
+      #sign_in user
       redirect_to user
-    end
+    #end
   end
   
   def destroy
