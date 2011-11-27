@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :password
-      t.interger :owner
+      t.integer :owner
 
       t.timestamps
     end

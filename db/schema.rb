@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20111123000451) do
     t.string   "city"
     t.string   "state"
     t.string   "password"
+    t.integer  "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
