@@ -5,10 +5,10 @@ FinalProject::Application.routes.draw do
   
   root :to => "sessions#new"
   match 'signup', :to => "users#new"
-  match '/signin',  :to => 'sessions#new'
+  match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match 'addcontact' , :to => 'pages#addcontact'
-  match 'profile' , :to => 'pages#profile'
+ #match 'profile' , :to => 'pages#profile'
   match 'message', :to => 'pages#message'
   match 'search', :to => "pages#search"
   # The priority is based upon order of creation:
