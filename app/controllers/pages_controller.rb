@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def profile
     @title = "My Profile"
+    @user = User.where(:id => cookies[:remember_token])
   end
 
   def search
