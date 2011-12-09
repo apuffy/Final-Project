@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
   def profile
     @title = "My Profile"
-    @user = User.find_by_id(cookies[:remember_token])
+    @user = User.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,6 +24,12 @@ class PagesController < ApplicationController
   
   def search
     @title = "Search"
+    @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @users }
+    end
   end
 
 end
