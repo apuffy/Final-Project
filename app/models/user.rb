@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   
   attr_accessible :name, :email, :phone, :address, :city, :state,:password
   validates :password, :presence     => true,
-                       :confirmation => true,
                        :length       => { :within => 5..40 }
             
   validates :name, :presence => true, :length => {:within => 3..40}
@@ -21,9 +20,6 @@ class User < ActiveRecord::Base
     user = find_by_email(email)
     return nil if user.nil?
     return user if user.has_password?(password)
-   #if(user.password == password)
-   #   return user unless user.nil?
-   #end
   end
   
 end
