@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
   
   def index
+    @title = "Index"
     @users = User.all
 
     respond_to do |format|
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @title = "Show"
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -35,6 +37,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @title = "Edit Contact"
     @user = User.find(params[:id])
   end
 
