@@ -1,7 +1,7 @@
 <center>
-<%= render 'layouts/body' %>
+	<%= render 'layouts/body' %>
 	<p id="notice"><%= notice %></p>
-	<h1>Your Information</h1>
+	
 	<p>
 	  <b>Name:</b>
 	  <%= @user.name %>
@@ -35,6 +35,11 @@
 	<p>
 	  <b>Password:</b>
 	  <%= @user.password %>
+	</p>
+	
+	<p>
+	  <b>Owner:</b>
+	  <%= @user.owner %>
 	</p>
 	
 	

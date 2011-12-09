@@ -2,7 +2,7 @@
 <center>
 	<h1>Add Contact</h1>
 	
-<%= form_tag(:action => :create) do |f| %>
+<%= form_for(@user) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -27,8 +27,7 @@
     <%= f.label :state %><br />
     <%= f.text_field :state %>
   </div>
-    <%= f.hidden_field (:owner,:value => cookies[:remember_token]) %>
-  </div>
+	<%= hidden_field(:owner, cookies[:remember_token])%>
   <div class="actions">
     <%= f.submit %>
   </div>
