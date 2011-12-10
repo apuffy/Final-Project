@@ -25,8 +25,7 @@ class PagesController < ApplicationController
   
   def search
     @title = "Search"
-    @contacts = Contact.where{:id =>}
-
+    @contacts = Contact.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @contacts }
