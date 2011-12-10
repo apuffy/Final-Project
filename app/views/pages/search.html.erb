@@ -17,6 +17,7 @@
   </tr>
 
 <% @contacts.each do |contact| %>
+	<% if contact.user_id == cookies[:remember_token] then %>
   <tr>
     <td><%= contact.name %></td>
     <td><%= contact.email %></td>
@@ -25,16 +26,18 @@
     <td><%= contact.city %></td>
     <td><%= contact.state %></td>
     <td><%= contact.user_id %></td>
+    <td><%= cookies[:remember_token] %></td>
     <td><%= link_to 'Show', contact %></td>
     <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
     <td><%= link_to 'Destroy', contact, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+  <% end %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'New Contact', addcontact_path %>
 
 </div>
 </center>
