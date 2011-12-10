@@ -2,6 +2,7 @@ class EmailsController < ApplicationController
   # GET /emails
   # GET /emails.json
   def index
+    @title = "index"
     @emails = Email.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class EmailsController < ApplicationController
   # GET /emails/1
   # GET /emails/1.json
   def show
+    @title = "show"    
     @email = Email.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class EmailsController < ApplicationController
   # GET /emails/new
   # GET /emails/new.json
   def new
+    @title = "New"    
     @email = Email.new
 
     respond_to do |format|
@@ -34,12 +37,14 @@ class EmailsController < ApplicationController
 
   # GET /emails/1/edit
   def edit
+    @title = "Edit"
     @email = Email.find(params[:id])
   end
 
   # POST /emails
   # POST /emails.json
   def create
+    @title ="create"
     @email = Email.new(params[:email])
 
     respond_to do |format|
@@ -56,6 +61,7 @@ class EmailsController < ApplicationController
   # PUT /emails/1
   # PUT /emails/1.json
   def update
+    @title = "Update"
     @email = Email.find(params[:id])
 
     respond_to do |format|

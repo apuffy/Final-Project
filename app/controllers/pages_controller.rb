@@ -11,6 +11,12 @@ class PagesController < ApplicationController
 
   def message
     @title = "Messages"
+    @emails = Email.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @emails }
+    end
   end
 
   def profile
