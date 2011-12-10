@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :contacts
-  has_many :microposts, :dependent => :destroy
   attr_accessible :name, :email, :phone, :address, :city, :state,:password
   
   validates :password, :presence     => true,

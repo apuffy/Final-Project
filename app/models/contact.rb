@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  belongs_to :user
+
   attr_accessible :name, :email, :phone, :address, :city, :state,:user_id
   
   validates :name, :presence => true, :length => {:within => 3..40}
@@ -10,5 +10,4 @@ class Contact < ActiveRecord::Base
   validates :state, :presence => true, :length => {:within => 1..40}
   validates :phone, :presence => true, :length => {:within => 9..10}
   
-  default_scope :order => 'contacts.name DESC'
 end
