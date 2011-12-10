@@ -1,6 +1,6 @@
 class Contact < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :name, :email, :phone, :address, :city, :state
+  attr_accessible :name, :email, :phone, :address, :city, :state,:user_id
   
   validates :name, :presence => true, :length => {:within => 3..40}
   validates_format_of :email, :presence => true, 

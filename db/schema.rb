@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20111210174043) do
     t.datetime "updated_at"
   end
 
+  add_index "contacts", ["name", "user_id"], :name => "index_contacts_on_name_and_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

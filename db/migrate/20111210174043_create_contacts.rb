@@ -11,5 +11,6 @@ class CreateContacts < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :contacts, [:name, :user_id]
   end
 end
