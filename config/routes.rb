@@ -1,5 +1,7 @@
 FinalProject::Application.routes.draw do
 
+  resources :emails
+
   get "emails/new"
 
   resources :contacts
