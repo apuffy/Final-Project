@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   
   def search
     @title = "Search"
-    @contacts = Contact.all
+    @contacts = Contact.where{:id =>}
 
     respond_to do |format|
       format.html # index.html.erb
