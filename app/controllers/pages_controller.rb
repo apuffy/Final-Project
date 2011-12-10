@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
   def profile
     @title = "My Profile"
-    @user = User.all
+    @user = User.find(cookies[:remember_token])
 
     respond_to do |format|
       format.html # show.html.erb
