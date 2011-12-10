@@ -1,6 +1,3 @@
-<%= render 'layouts/body' %>
-<center>
-<h1>Add a contact</h1>	
 <%= form_for(@contact) do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
@@ -40,10 +37,9 @@
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.number_field :user_id, :value => cookies[:remember_token] %>
+    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-</center>

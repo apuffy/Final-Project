@@ -1,13 +1,13 @@
-class CreateUsers < ActiveRecord::Migration
+class CreateContacts < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :contacts do |t|
       t.string :name
       t.string :email
       t.integer :phone
       t.string :address
       t.string :city
       t.string :state
-      t.string :password
+      t.integer :user_id
 
       t.timestamps
     end

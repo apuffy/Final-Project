@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
   def addcontact
    @title = "Add Contact"
-   @user = User.new
-   respond_to do |format|
-   format.html # new.html.erb
-   format.json { render json: @user }
-   end
+    @contact = Contact.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @contact }
+    end
   end
 
   def message
@@ -24,11 +25,11 @@ class PagesController < ApplicationController
   
   def search
     @title = "Search"
-    @users = User.all
+    @contacts = Contact.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @users }
+      format.json { render json: @contacts }
     end
   end
 

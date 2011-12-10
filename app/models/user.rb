@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :name, :email, :phone, :address, :city, :state,:password,:owner
+  attr_accessible :name, :email, :phone, :address, :city, :state,:password
   
-            
+  validates :password, :presence     => true,
+                       :length       => { :within => 5..40 }          
   validates :name, :presence => true, :length => {:within => 3..40}
   validates_format_of :email, :presence => true, 
                       :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
