@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+  has_many :contacts
   attr_accessible :name, :email, :phone, :address, :city, :state,:password
   
   validates :password, :presence     => true,
