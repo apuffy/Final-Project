@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   
   def search
     @title = "Search"
-    @contacts = Contact.all
+    @contacts = Contact.where("user_id = ?", cookies[:remember_token])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @contacts }
