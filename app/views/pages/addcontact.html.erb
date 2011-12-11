@@ -38,10 +38,7 @@
     <%= f.label :state %><br />
     <%= f.text_field :state %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id, :value => cookies[:remember_token] %>
-  </div>
+    <%= f.hidden_field :user_id, :value => cookies[:remember_token] %>
   <div class="actions">
     <%= f.submit %>
   </div>
