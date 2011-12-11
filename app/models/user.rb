@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :address, :presence => true, :length => {:within => 1..40}
   validates :city, :presence => true, :length => {:within => 1..40}
   validates :state, :presence => true, :length => {:within => 1..40}
-  validates :phone, :presence => true, :length => {:within => 9..9}
+  validates :phone, :presence => true, :length => {:within => 10.10}
                        
   def has_password?(submitted_password)
     password == (submitted_password)
