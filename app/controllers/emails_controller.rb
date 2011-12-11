@@ -26,12 +26,14 @@ class EmailsController < ApplicationController
   # GET /emails/new
   # GET /emails/new.json
   def new
-    @title = "New"    
+    @title = "New Email"    
     @email = Email.new
+    @contacts = Contact.where("user_id = ?", cookies[:remember_token])
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @email }
+      format.json { render json: @contact }
     end
   end
 
@@ -49,7 +51,7 @@ class EmailsController < ApplicationController
 
     respond_to do |format|
       if @email.save
-        format.html { redirect_to @email, notice: 'Email was successfully created.' }
+        format.html { redirect_to message_path, notice: 'Email was successfully created.' }
         format.json { render json: @email, status: :created, location: @email }
       else
         format.html { render action: "new" }
@@ -66,7 +68,7 @@ class EmailsController < ApplicationController
 
     respond_to do |format|
       if @email.update_attributes(params[:email])
-        format.html { redirect_to @email, notice: 'Email was successfully updated.' }
+        format.html { redirect_to message_path, notice: 'Email was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -82,7 +84,7 @@ class EmailsController < ApplicationController
     @email.destroy
 
     respond_to do |format|
-      format.html { redirect_to emails_url }
+      format.html { redirect_to message_path }
       format.json { head :ok }
     end
   end

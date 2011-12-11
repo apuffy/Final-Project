@@ -11,8 +11,7 @@ class PagesController < ApplicationController
 
   def message
     @title = "Messages"
-    @emails = Email.all
-
+    @emails = Email.where(:to => cookies[:remember_email])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @emails }
