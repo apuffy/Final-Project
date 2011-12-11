@@ -24,16 +24,8 @@ module SessionsHelper
   
   def sign_out
     cookies.delete(:remember_token)
+    cookies.delete(:remember_email)
     self.current_user = nil
   end
-  
-  private
-  def user_from_remember_token
-    userEmail = remember_token
-    User.find_by_email(userEmail)
-  end
-
-  def remember_token
-    cookies[:remember_token] || nil
-  end
+ 
 end
