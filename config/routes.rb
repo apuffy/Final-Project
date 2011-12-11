@@ -1,9 +1,6 @@
 FinalProject::Application.routes.draw do
-
+  
   resources :emails
-
-  get "emails/new"
-
   resources :contacts
   resources :users
   resources :sessions, :only => [:new, :create, :destory]
