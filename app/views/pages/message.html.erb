@@ -1,4 +1,33 @@
 <%= render 'layouts/body' %>
 <h1>This is where you can send emails</h1>
 
+<center>
+<h1>Listing emails</h1>
 
+<table>
+  <tr>
+    <th>To</th>
+    <th>From</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @emails.each do |email| %>
+  <tr>
+    <td><%= email.to %></td>
+    <td><%= email.from %></td>
+    <td><%= email.content %></td>
+    <td><%= link_to 'Show', email %></td>
+    <td><%= link_to 'Destroy', email, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Email', new_email_path %>
+</div>
+</center>
+>>>>>>> mailer

@@ -76,7 +76,7 @@ class ContactsController < ApplicationController
     @contact.destroy
 
     respond_to do |format|
-      format.html { redirect_to contacts_url }
+      format.html { redirect_to search_path }
       format.json { head :ok }
     end
   end
